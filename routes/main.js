@@ -34,8 +34,8 @@ router.get("/api/status", async (req, res) => {
 		uptime: muptime(process.uptime()),
 		speed: `${neww - old}ms`,
 		info: {
-			owner: "FuadXyro",
-			apikey: "Chat Owner: https://wa.me/6281999115614",
+			owner: "HillaryYours",
+			apikey: "Chat Owner: https://wa.me/6285813708397",
 		},
 	};
 	res.json(status);

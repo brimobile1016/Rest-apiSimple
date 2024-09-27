@@ -26,25 +26,25 @@ attp } = require('../lib/scrape');
 // Lib
 var { fetchJson, getBuffer } = require('../lib/myfunc');
 // Settings
-const author = "FuadXyro"
+const author = "HillaryYours"
 
 // Mess err
 mess = {
     error: {
         status: false,
         message: 'Error, Service Unavaible',
-        maintanied_by: 'FuadXyro'
+        maintanied_by: 'HillaryYours'
     },
     noturl: {
     	status: false,
     	message: 'Error, Invalid Url',
-    	maintanied_by: 'FuadXyro'
+    	maintanied_by: 'HillaryYours'
     },
     notquery: {
     	status: false,
     	code: 403,
     	message: 'Error, Invalid Query',
-    	maintanied_by: 'FuadXyro'
+    	maintanied_by: 'HillaryYours'
     }
 }
 // Features
