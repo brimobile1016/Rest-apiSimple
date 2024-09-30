@@ -778,14 +778,6 @@ router.get('/game/tebakgame', async (req, res, next) => {
               ...soal[~~(Math.random() * soal.length)]
           })
 })
-router.get('game/tebakjkt48', async (req, res, next) => {
-		let lily = await fetchJson('https://raw.githubusercontent.com/FallEzz/JKT48/main/JKT48fitur.json')
-	   res.json({
-	status: true,
-	author: `${author}`,
-	result: lily
-	})
-})
 //---------------------------------------------------------------------
 
 //Maker
