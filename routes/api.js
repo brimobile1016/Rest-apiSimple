@@ -514,7 +514,7 @@ router.get('/tools/blur', async (req, res, next) => {
 router.get('/tools/remini', async (req, res, next) => {
     var url = req.query.url
     if (!url) return res.json(mess.noturl)
-    var result = await getBuffer(`https://vihangayt.me/tools/enhance?url=${url}`)
+    var result = await getBuffer(`https://widipe.com/remini?url=${url}`)
         res.set('Content-Type', 'image/png');
         res.send(result);
     })
