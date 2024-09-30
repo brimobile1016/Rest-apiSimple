@@ -27,7 +27,6 @@ attp } = require('../lib/scrape');
 var { fetchJson, getBuffer } = require('../lib/myfunc');
 // Settings
 const author = "HillaryYours"
-
 // Mess err
 mess = {
     error: {
