@@ -819,6 +819,16 @@ router.get('/others/diffusion', async (req, res, next) => {
         res.set('Content-Type', 'image/png');
         res.send(result);
     })
+router.get('/others/ceror', async (req, res, next) => {
+	var query = req.query.q
+	if (!query) return res.json(mess.notquery)
+	let raw = fetchJson(`https://raw.githubusercontent.com/RyoxAds/CEROR/refs/heads/main/ceritahoror.json`)
+	res.json({
+	status: true,
+	author: `${author}`,
+	result: data
+	})
+})
 router.get('/others/kisahnabi', async (req, res, next) => {
 	var query = req.query.q
 	if (!query) return res.json(mess.notquery)
