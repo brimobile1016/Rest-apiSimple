@@ -826,7 +826,7 @@ router.get('/others/ceror', async (req, res, next) => {
 	res.json({
 	status: true,
 	author: `${author}`,
-	result: data
+	result: raw
 	})
 })
 router.get('/others/kisahnabi', async (req, res, next) => {
