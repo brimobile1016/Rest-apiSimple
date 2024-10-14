@@ -591,6 +591,14 @@ router.get('/random/nsfw', async (req, res, next) => {
 	result: data.result
 	})
 })
+router.get('/random/ceror', async (req, res, next) => {
+	let data = await fetchJson(`https://raw.githubusercontent.com/RyoxAds/CEROR/refs/heads/main/ceritahoror.json`)
+	res.json({
+	status: true,
+	author: `${author}`,
+	result: data.result
+	})
+})
 router.get('/random/hentai', async (req, res, next) => {
 	let data = await fetchJson(`https://xorizn-apis-v1.vercel.app/api/random/hentai`)
 	res.json({
