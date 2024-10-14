@@ -592,7 +592,7 @@ router.get('/random/nsfw', async (req, res, next) => {
 	})
 })
 router.get('/random/ceror', async (req, res, next) => {
-	let data = await fetchJson(`https://raw.githubusercontent.com/RyoxAds/CEROR/refs/heads/main/ceritahoror.json`)
+	let data = await fetchJson(`https://raw.githubusercontent.com/RyoxAds/tqkutgw/refs/heads/main/ceror.json`)
 	res.json({
 	status: true,
 	author: `${author}`,
