@@ -591,15 +591,6 @@ router.get('/random/nsfw', async (req, res, next) => {
 	result: data.result
 	})
 })
-router.get('/random/ceror', async (req, res, next) => {
-	const data = JSON.parse(fs.readFileSync(__path +'/database/game/ceror.json'));
-    var result = data[Math.floor(Math.random() * data.length)
-	res.json({
-	status: true,
-	author: `${author}`,
-	result: data.result
-	})
-})
 router.get('/random/hentai', async (req, res, next) => {
 	let data = await fetchJson(`https://xorizn-apis-v1.vercel.app/api/random/hentai`)
 	res.json({
