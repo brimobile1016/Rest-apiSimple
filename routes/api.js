@@ -26,24 +26,25 @@ attp } = require('../lib/scrape');
 // Lib
 var { fetchJson, getBuffer } = require('../lib/myfunc');
 // Settings
-const author = "HillaryYours"
+const author = "FuadXyro"
+
 // Mess err
 mess = {
     error: {
         status: false,
         message: 'Error, Service Unavaible',
-        maintanied_by: 'HillaryYours'
+        maintanied_by: 'FuadXyro'
     },
     noturl: {
     	status: false,
     	message: 'Error, Invalid Url',
-    	maintanied_by: 'HillaryYours'
+    	maintanied_by: 'FuadXyro'
     },
     notquery: {
     	status: false,
     	code: 403,
     	message: 'Error, Invalid Query',
-    	maintanied_by: 'HillaryYours'
+    	maintanied_by: 'FuadXyro'
     }
 }
 // Features
@@ -513,7 +514,7 @@ router.get('/tools/blur', async (req, res, next) => {
 router.get('/tools/remini', async (req, res, next) => {
     var url = req.query.url
     if (!url) return res.json(mess.noturl)
-    var result = await getBuffer(`https://widipe.com/remini?url=${url}`)
+    var result = await getBuffer(`https://vihangayt.me/tools/enhance?url=${url}`)
         res.set('Content-Type', 'image/png');
         res.send(result);
     })
@@ -818,7 +819,7 @@ router.get('/others/diffusion', async (req, res, next) => {
     var result = await animedif(query)
         res.set('Content-Type', 'image/png');
         res.send(result);
-                  })
+    })
 router.get('/others/kisahnabi', async (req, res, next) => {
 	var query = req.query.q
 	if (!query) return res.json(mess.notquery)
