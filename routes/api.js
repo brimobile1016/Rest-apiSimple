@@ -819,7 +819,6 @@ router.get('/others/diffusion', async (req, res, next) => {
         res.set('Content-Type', 'image/png');
         res.send(result);
                   })
-})
 router.get('/others/kisahnabi', async (req, res, next) => {
 	var query = req.query.q
 	if (!query) return res.json(mess.notquery)
