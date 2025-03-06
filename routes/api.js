@@ -22,7 +22,8 @@ var { doujindesu } = require('@xct007/frieren-scraper')
 var { 
 ChatGpt, 
 animedif, 
-attp } = require('../lib/scrape');
+attp,
+ssweb } = require('../lib/scrape');
 // Lib
 var { fetchJson, getBuffer } = require('../lib/myfunc');
 // Settings
@@ -840,4 +841,33 @@ router.get('/others/simi', async (req, res, next) => {
 	result: data.message
 	})
 })
+router.get('/other/ssweb', async (req, res, next) => {
+    try {
+        const url = req.query.url;
+
+        // Validasi jika parameter URL tidak ada
+        if (!url) {
+            return res.status(400).json({
+                status: 400,
+                message: 'Input parameter url diperlukan'
+            });
+        }
+
+        // Panggil fungsi ssweb
+        const data = await ssweb(url);
+
+        // Jika berhasil, kirim gambar dengan header yang benar
+        res.set('Content-Type', 'image/png');
+        return res.status(200).send(data);
+    } catch (error) {
+        console.error('Error mengambil screenshot:', error);
+
+        // Tangani error dengan respon yang jelas
+        return res.status(500).json({
+            status: 500,
+            message: 'Internal Server Error'
+        });
+    }
+});
+
 module.exports = router
