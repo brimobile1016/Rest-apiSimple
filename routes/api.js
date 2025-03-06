@@ -841,33 +841,27 @@ router.get('/others/simi', async (req, res, next) => {
 	result: data.message
 	})
 })
-router.get('/other/ssweb', async (req, res, next) => {
-    try {
-        const url = req.query.url;
+router.get('/download/ssweb', async (req, res, next) => {
+    
+    var url = req.query.url;
 
-        // Validasi jika parameter URL tidak ada
-        if (!url) {
-            return res.status(400).json({
-                status: 400,
-                message: 'Input parameter url diperlukan'
-            });
-        }
-
-        // Panggil fungsi ssweb
-        const data = await ssweb(url);
-
-        // Jika berhasil, kirim gambar dengan header yang benar
-        res.set('Content-Type', 'image/png');
-        return res.status(200).send(data);
-    } catch (error) {
-        console.error('Error mengambil screenshot:', error);
-
-        // Tangani error dengan respon yang jelas
-        return res.status(500).json({
+    
+    if (url === undefined) return res.status(404).send({
+        status: 404,
+        message: `Input Parameter url`
+    });
+    
+    
+    ssweb(url).then(data => {
+        res.set({'Content-Type': 'image/png'})
+        res.status(200).send(data)
+    }).catch(error => {
+        console.log(error);
+        res.status(500).send({
             status: 500,
             message: 'Internal Server Error'
-        });
-    }
-});
+        })
+    });
+  })
 
 module.exports = router
